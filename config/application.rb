@@ -20,7 +20,7 @@ module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-    Dir["#{Rails.root.to_s}/app/lib/**/*.rb", "#{Rails.root.to_s}/app/services/**/*.rb"].each do |file|
+    Dir["#{Rails.root.to_s}/lib/**/*.rb", "#{Rails.root.to_s}/app/services/**/*.rb"].each do |file|
       require file
     end
     config.generators.test_framework :rspec
