@@ -17,7 +17,8 @@ describe Users::CreateService do
 
   context 'when success' do
     it { expect(service).to be_success }
-    it { expect(service.user).to eq(User.last) }
+    it { expect(service.user['email']).to eq(User.last.email) }
+    it { expect(service.user['phone_number']).to eq(User.last.phone_number) }
   end
 
   context 'when failure' do
