@@ -20,17 +20,6 @@ describe 'POST /api/users', type: :request do
     }
   end
 
-  let(:expected_response) do
-    {
-      email: 'user@example.com',
-      phone_number: '5551235555',
-      full_name: 'Joe Smith',
-      key: String,
-      account_key: nil,
-      metadata: 'male, age 32, unemployed, college-educated'
-    }
-  end
-
   before do
     allow(SecureRandom).to receive(:hex).and_return('b97df97988a3832f009e2f18663ac932')
     post_request
