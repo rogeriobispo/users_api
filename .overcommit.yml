@@ -1,0 +1,9 @@
+PreCommit:
+  ALL:
+    problem_on_unmodified_line: ignore
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop']
+CommitMsg:
+  ALL:
+    enabled: false

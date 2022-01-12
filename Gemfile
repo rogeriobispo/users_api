@@ -29,8 +29,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Shim to load environment variables from .env into ENV in development.
+  gem 'dotenv-rails'
+  # Adds step-by-step debugging and stack navigation capabilities to pry using byebug.
+  gem 'pry-byebug'
+  # factory_bot is a fixtures replacement with a straightforward definition syntax, support for multiple build strategies
+  gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
@@ -40,6 +48,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'simplecov', require: false
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
