@@ -37,21 +37,21 @@ below:
 
 ### POST /api/users
 
-- [ ] Create a new user record in the database.
-- [ ] On success, return JSON object of user that was just created
-- [ ] On success, return status code 201 Created
-- [ ] On failure, return status code 422 Unprocessable Entity with a list of all
+- [ X ] Create a new user record in the database.
+- [ X ] On success, return JSON object of user that was just created
+- [ X ] On success, return status code 201 Created
+- [ X ] On failure, return status code 422 Unprocessable Entity with a list of all
     the errors.
-- [ ] 5xx for server errors.
-- [ ] Endpoint can only accept `email`, `phone_number`, `full_name`, `password`,
+- [ X ] 5xx for server errors.
+- [ X ] Endpoint can only accept `email`, `phone_number`, `full_name`, `password`,
     and `metadata` fields.
-- [ ] `key` field should be generated server side when user is created
+- [ X ] `key` field should be generated server side when user is created
 - [ ] `password` should be stored hashed with a salt value.
 - [ ] `account_key` field should be generated from account key service.
 
 ### JSON Specifications
 
-- [ ] On creation of a new user, the response object should be in the following
+- [ X ] On creation of a new user, the response object should be in the following
     format:
 ```
 {
@@ -106,7 +106,7 @@ curl -H "Content-Type: application/json" -X POST https://account-key-service.her
 {"email":"user@example.com","account_key":"b97df97988a3832f009e2f18663ac932"}
 ```
 
-- [ ] Create Access Key service library
+- [ X ] Create Access Key service library
 - [ ] On user create, trigger Sidekiq job for access Account Key service
 - [ ] Perform retry on failure from Account Key service
 - [ ] Update user model with `account_key` value
@@ -121,7 +121,7 @@ curl -H "Content-Type: application/json" -X POST https://account-key-service.her
 
 #### User Service Routing
 - [ ] Verify that the GET /api/users endpoint routes to the appropriate method.
-- [ ] Verify that the POST /api/users endpoint routes to the appropriate method.
+- [ X ] Verify that the POST /api/users endpoint routes to the appropriate method.
 
 #### User Controller
 - [ ] Verify that a request without a query parameter returns all users in the
