@@ -6,12 +6,20 @@ class RetrieveAccountkey
   end
 
   def perform(email, key)
-    account_key_url = ENV['ACCOUNT_KEY_URL']
-    body = { email: email, key: key }.to_json
-    parsed_response = @http_provider.post(account_key_url, body: body).parsed_response.with_indifferent_access
+    parsed_response = http_post({ email: email, key: key }).parsed_response.with_indifferent_access
     {
       email: parsed_response[:email],
       account_key: parsed_response[:account_key]
     }
+  end
+
+  private
+
+  def account_key_url
+    ENV['ACCOUNT_KEY_URL']
+  end
+
+  def http_post(body)
+    @http_provider.post(account_key_url, body: body.to_json)
   end
 end
