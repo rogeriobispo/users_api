@@ -11,6 +11,7 @@ module Users
     def perform
       user = User.new(params.merge(key: key))
       if user.save
+        retrieve_account_key(user.id)
         Result::Success.new(user: user.attributes.except('updated_at', 'created_at'))
       else
         Result::Failure.new(errors: user.errors.full_messages)
@@ -21,6 +22,10 @@ module Users
 
     def key
       SecureRandom.hex
+    end
+
+    def retrieve_account_key(user_id)
+      RetrieveAccountKeyJob.perform_later(user_id)
     end
   end
 end

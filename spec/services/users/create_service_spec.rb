@@ -5,6 +5,8 @@ require 'rails_helper'
 describe Users::CreateService do
   subject(:service) { described_class.perform(params) }
 
+  let(:aldou_success) { Result::Success.new }
+
   let(:params) do
     {
       email: 'user@example.com',
@@ -15,10 +17,19 @@ describe Users::CreateService do
     }
   end
 
+  before do
+    allow(RetrieveAccountKeyJob).to receive(:perform_later).and_return(nil)
+  end
+
   context 'when success' do
     it { expect(service).to be_success }
     it { expect(service.user['email']).to eq(User.last.email) }
     it { expect(service.user['phone_number']).to eq(User.last.phone_number) }
+
+    it do
+      service
+      expect(RetrieveAccountKeyJob).to have_received(:perform_later).with(User.last.id)
+    end
   end
 
   context 'when failure' do
