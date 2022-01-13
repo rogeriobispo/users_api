@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry-byebug'
   # factory_bot is a fixtures replacement with a straightforward definition syntax, support for multiple build strategies
   gem 'factory_bot_rails'
+  gem 'ffaker'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'

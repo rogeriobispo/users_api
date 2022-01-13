@@ -2,12 +2,12 @@
 
 FactoryBot.define do
   factory :user do
-    email { 'MyString' }
-    phone_number { 'MyString' }
-    full_name { 'MyString' }
-    password { 'MyString' }
-    key { 'MyString' }
-    account_key { 'MyString' }
-    metadata { 'MyString' }
+    email { FFaker::Internet.email }
+    phone_number { FFaker::PhoneNumber.phone_number[0, 15] }
+    full_name { FFaker::Name.unique.name }
+    password { '123456' }
+    key { SecureRandom.hex }
+    account_key { SecureRandom.hex }
+    metadata { FFaker::Name.name }
   end
 end
