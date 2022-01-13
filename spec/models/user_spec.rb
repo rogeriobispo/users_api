@@ -12,7 +12,6 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_uniqueness_of(:email) }
     it { is_expected.to validate_presence_of(:phone_number) }
     it { is_expected.to validate_uniqueness_of(:phone_number).case_insensitive }
-    it { is_expected.to validate_presence_of(:password_digest) }
     it { is_expected.to validate_presence_of(:key) }
     it { is_expected.to validate_uniqueness_of(:key).case_insensitive }
     it { is_expected.to validate_uniqueness_of(:account_key) }

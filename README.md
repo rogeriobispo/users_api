@@ -46,8 +46,8 @@ below:
 - [ X ] Endpoint can only accept `email`, `phone_number`, `full_name`, `password`,
     and `metadata` fields.
 - [ X ] `key` field should be generated server side when user is created
-- [ ] `password` should be stored hashed with a salt value.
-- [ ] `account_key` field should be generated from account key service.
+- [ X ] `password` should be stored hashed with a salt value.
+- [ X ] `account_key` field should be generated from account key service.
 
 ### JSON Specifications
 
@@ -79,7 +79,7 @@ below:
  ]
 }
 ```
-- [ ] Errors should be returned as:
+- [ X ] Errors should be returned as:
 ```
 {
  errors: [
