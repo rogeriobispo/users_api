@@ -15,7 +15,7 @@ gem 'httparty'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'aldous'
 gem 'sidekiq'
 # Use ActiveStorage variant
@@ -58,7 +58,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'shoulda-matchers'
   gem 'hash_dot'
-  gem 'mock_redis'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
