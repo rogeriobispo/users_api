@@ -17,8 +17,12 @@ gem 'httparty'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'aldous'
+gem 'sidekiq'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+# Adds a Redis::Namespace class which can be used to namespace Redis keys
+gem 'redis-namespace', '~> 1.7.0'
+gem 'redis-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -54,6 +58,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'shoulda-matchers'
   gem 'hash_dot'
+  gem 'mock_redis'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
