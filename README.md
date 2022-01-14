@@ -28,12 +28,12 @@ below:
 
 ### GET /api/users
 
-- [ ] Return all current user records, most recently created first.
-- [ ] Optional `query` paramaters to filter results matching `email`, `full_name`,
+- [ X ] Return all current user records, most recently created first.
+- [ X ] Optional `query` paramaters to filter results matching `email`, `full_name`,
     and `metadata`. Return in most recently created first order.
-- [ ] 200 OK Response for all success cases
-- [ ] 422 Unprocessable Entity for malformed query parameters.
-- [ ] 5xx for server errors
+- [ X ] 200 OK Response for all success cases
+- [ X ] 422 Unprocessable Entity for malformed query parameters.
+- [ X ] 5xx for server errors
 
 ### POST /api/users
 
