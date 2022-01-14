@@ -25,3 +25,5 @@ Lint/MissingSuper:
   Enabled: false
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']
+UniqueValidationWithoutIndex:
+  Enabled: false
